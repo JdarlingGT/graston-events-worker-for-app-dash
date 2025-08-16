@@ -1,0 +1,23 @@
+# Graston Data Aggregation Worker - Wrangler configuration
+name = "graston-data-api"
+main = "src/index.ts"
+compatibility_date = "2024-10-01"
+workers_dev = true
+
+# Note:
+# - Secrets are NOT stored here. Add them with:
+#     wrangler secret put WC_CONSUMER_KEY
+#     wrangler secret put WC_CONSUMER_SECRET
+#     wrangler secret put WP_APP_USER
+#     wrangler secret put WP_APP_PASSWORD
+
+[vars]
+# Public-ish non-secret variables (safe to commit)
+# Base URL of the WordPress site hosting WooCommerce/ACF/LearnDash/FluentCRM REST APIs
+WP_BASE_URL = "https://your-wordpress.example"
+# Optional: default LearnDash course id fallback (string)
+LEARNDASH_DEFAULT_COURSE_ID = "0"
+
+# You can also define environment-specific overrides like:
+# [env.dev.vars]
+# WP_BASE_URL = "https://staging.example"
