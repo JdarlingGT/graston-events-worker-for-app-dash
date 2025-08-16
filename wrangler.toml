@@ -1,5 +1,6 @@
+
 # Graston Data Aggregation Worker - Wrangler configuration
-name = "graston-data-api"
+name = 'graston-events-api'
 main = "src/index.ts"
 compatibility_date = "2024-10-01"
 workers_dev = true
