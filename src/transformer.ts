@@ -103,6 +103,7 @@ export function transformProductToEventListItem(product: WooProduct, acfData: AC
   const startDateRaw = (getAcfField(acfData, 'startDate', 'start_date') as string | undefined) ?? '';
   const startDate = toISODate(startDateRaw);
 
+<<<<<<< HEAD
   // capacity: correct calculation using remaining stock + sold
   const remaining = product.manage_stock ? toNumber(product.stock_quantity, 0) : null;
   const sold = toNumber(product.total_sales, 0);
@@ -113,6 +114,15 @@ export function transformProductToEventListItem(product: WooProduct, acfData: AC
   
   // enrolled count is the number sold
   const enrolledCount = sold;
+=======
+  // capacity: prefer product stock if managed, else ACF capacity
+  const stock = (product.manage_stock ? toNumber(product.stock_quantity, 0) : undefined);
+  const acfCapacity = toNumber(getAcfField(acfData, 'capacity'), 0);
+  const capacity = typeof stock === 'number' ? stock : acfCapacity;
+
+  // enrolled: Woo total_sales is cumulative sales for product
+  const enrolledCount = toNumber(product.total_sales, 0);
+>>>>>>> 5e27c97f2fa9f88f72fcae7c91abff01ca003da0
 
   // status with danger/watch/go logic
   const status = computeStatus(startDate, capacity, enrolledCount);

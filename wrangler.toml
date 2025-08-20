@@ -1,4 +1,3 @@
-
 # Graston Data Aggregation Worker - Wrangler configuration
 name = 'graston-events-worker-for-app-dash'
 main = "src/index.ts"

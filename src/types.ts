@@ -32,7 +32,6 @@ export interface EventDetail extends EventListItem {
   attendees: AttendeeProfile[];
 }
 
-
 /**
  * Minimal raw API shapes we consume
  */
