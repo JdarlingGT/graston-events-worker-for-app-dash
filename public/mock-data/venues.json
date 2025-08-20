@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "name": "Grand Hall",
+    "location": "123 Main St",
+    "capacity": 500
+  },
+  {
+    "id": "2",
+    "name": "Conference Center",
+    "location": "456 Elm St",
+    "capacity": 300
+  }
+]
